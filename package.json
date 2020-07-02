@@ -1,0 +1,27 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@editorjs/editorjs": "^2.15.1",
+        "@editorjs/embed": "^2.2.1",
+        "@editorjs/header": "^2.3.1",
+        "@editorjs/image": "^2.3.3",
+        "@editorjs/list": "^1.4.0",
+        "@editorjs/paragraph": "^2.6.0",
+        "@editorjs/table": "^1.2.0",
+        "cross-env": "^5.0.0",
+        "laravel-mix": "^1.0",
+        "laravel-nova": "^1.0"
+    },
+    "dependencies": {
+        "vue": "^2.5.0"
+    }
+}

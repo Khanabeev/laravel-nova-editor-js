@@ -1,0 +1,126 @@
+.video-tool--loading__preloader {
+  display: block;
+}
+
+.video-tool--loading__iframe-container {
+  display: none;
+}
+
+.video-tool__preloader {
+  display: none;
+  position: relative;
+  height: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e6e9eb;
+}
+
+.video-tool__preloader::before {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -25px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 2px solid #cdd1e0;
+  border-top-color: #388ae5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: video-preloader-spin 2s infinite linear;
+          animation: video-preloader-spin 2s infinite linear;
+}
+
+.video-tool__iframe-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.video-tool__iframe-container:not(:empty) {
+  margin-top: 10px;
+}
+
+.video-tool__iframe-container::before {
+  display: block;
+  content: "";
+  padding-top: 56.25%;
+}
+
+.video-tool__iframe-container iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@-webkit-keyframes video-preloader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes video-preloader-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.editor-js {
+  width: 100%;
+  background-color: #fff;
+  border-width: 1px;
+  border-color: #bacad6;
+  padding-left: .75rem;
+  color: #7c858e;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  /* Hide image settings buttons */
+}
+
+.editor-js .image-tool__tune {
+  display: none;
+}
+
+.editor-js .cdx-input + .cdx-input {
+  margin-top: 10px;
+}
+
+.editor-js .cdx-input[contentEditable=true][data-placeholder]:before {
+  position: absolute !important;
+  content: attr(data-placeholder);
+  color: #707684;
+  font-weight: normal;
+  display: none;
+}
+
+.editor-js .cdx-input[contentEditable=true][data-placeholder]:empty::before {
+  display: block;
+}
+
+.editor-js .cdx-input[contentEditable=true][data-placeholder]:empty:focus::before {
+  display: none;
+}
+

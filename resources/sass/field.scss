@@ -1,0 +1,40 @@
+@import '../js/components/blocks/video/index';
+
+// Nova Tool CSS
+.editor-js {
+    width: 100%;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #bacad6;;
+    padding-left: .75rem;
+    color: #7c858e;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .05);
+
+    /* Hide image settings buttons */
+    .image-tool__tune {
+        display: none;
+    }
+
+    .cdx-input + .cdx-input {
+        margin-top: 10px;
+    }
+
+    .cdx-input[contentEditable=true][data-placeholder] {
+        &:before {
+            position: absolute !important;
+            content: attr(data-placeholder);
+            color: #707684;
+            font-weight: normal;
+            display: none;
+        }
+
+        &:empty::before {
+            display: block;
+        }
+
+        &:empty:focus::before {
+            display: none;
+        }
+    }
+}

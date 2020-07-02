@@ -1,0 +1,74 @@
+.video-tool {
+    &--loading {
+        &__preloader {
+            display: block;
+        }
+
+        &__iframe-container {
+            display: none;
+        }
+    }
+
+    &__preloader {
+        display: none;
+        position: relative;
+        height: 200px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #e6e9eb;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 3;
+            left: 50%;
+            top: 50%;
+            width: 30px;
+            height: 30px;
+            margin-top: -25px;
+            margin-left: -15px;
+            border-radius: 50%;
+            border: 2px solid #cdd1e0;
+            border-top-color: #388ae5;
+            box-sizing: border-box;
+            animation: video-preloader-spin 2s infinite linear;
+        }
+    }
+
+    &__iframe-container {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+
+        &:not(:empty) {
+            margin-top: 10px;
+        }
+
+        &::before {
+            display: block;
+            content: "";
+            padding-top: 56.25%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+}
+
+@keyframes video-preloader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
